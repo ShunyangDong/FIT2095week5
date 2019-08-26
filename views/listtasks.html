@@ -1,0 +1,37 @@
+<html>
+<head>
+    <style>
+        table,th,td {
+            border: 1px solid black;
+        }
+    </style>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    <h1> Welcome!</h1></br>
+    <a href = "http://127.0.0.1:8080">HOME</a>
+        <a href = "http://127.0.0.1:8080/newtask">ADD NEW TASK</a>
+    <h3>
+        <table>
+            <tr>
+                <td>Name</td>
+                <td>Due date</td>
+                <td>Description</td>
+            </tr>
+            <% for ( var i =0; i< db.length;i++){ %>
+                <tr>
+                    <td>
+                        <%= db[i].name %>
+                    </td>
+                    <td>
+                        <%= db[i].due %>
+                    </td>
+                    <td>
+                        <%= db[i].des %>
+                    </td>
+                </tr>
+                <% }%>
+    </h3>
+</body>
+</html>
