@@ -33,6 +33,7 @@ app.post('/newtask', (req,res)=>{
         due:due,
         des:des
     })
+    res.render('listtasks.html', {db:db});
 })
 
 app.get('/listtasks',(req,res)=>{
