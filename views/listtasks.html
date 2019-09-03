@@ -10,25 +10,45 @@
 </head>
 <body>
     <h1> Welcome!</h1></br>
+    <h1>
     <a href = "/">HOME</a>
-        <a href = "/newtask">ADD NEW TASK</a>
+    <a href = "/newtask">ADD NEW TASK</a>
+    <a href = "/listtasks">List Tasks</a>
+    <a href="/updatetasks">Update Tasks</a>
+    <a href="/deletetasks">Delete Tasks</a>
+    <a href="/deleteall">Delete All</a>
+    </h1>
     <h3>
         <table>
             <tr>
+                <td>ID</td>
                 <td>Name</td>
+                <td>Assigned to </td>
                 <td>Due date</td>
+                <td>Status</td>
                 <td>Description</td>
+                
+               
             </tr>
             <% for ( var i =0; i< db.length;i++){ %>
                 <tr>
                     <td>
+                        <%= db[i].id %>
+                    </td>
+                    <td>
                         <%= db[i].name %>
+                    </td>
+                    <td>
+                        <%= db[i].person %>
                     </td>
                     <td>
                         <%= db[i].due %>
                     </td>
                     <td>
-                        <%= db[i].des %>
+                        <%= db[i].status %>
+                    </td>
+                    <td>
+                        <%= db[i].desc %>
                     </td>
                 </tr>
                 <% }%>
