@@ -100,8 +100,39 @@ app.get('/deleteall',function (req, res) {
 });
 
 app.post('/deleteall', function (req, res) {
-    db.collection('tasks').deleteMany({});
+    db.collection('tasks').deleteMany({ status: "completed"});
     res.redirect('/listtasks');
+});
+
+
+app.get('/insertmany',(req,res)=>{
+    res.render('insertmany.html');
+})
+app.post('/insertmany', function (req, res) {
+    console.log("ARRIVE HERE\n");
+    let taskDetails = req.body;
+    var uniqueId;
+    db.collection('tasks').find({}).toArray(function (err, data) {
+        let flag = true;
+        let count = parseInt(taskDetails.count);
+        console.log("count get" + taskDetails.count);
+        taskArray= [];
+        while(count>0){
+            while(flag){
+                uniqueId= Math.round(Math.random()*1000);
+                if(data.filter(item => (item.id == uniqueId)).length == 0){
+                    flag = false;
+            }}
+            console.log(uniqueId);
+            count -=1;
+            taskArray.push({ id: uniqueId,
+                name: taskDetails.name, person: taskDetails.person, 
+                due: taskDetails.due, status: taskDetails.status,
+                desc: taskDetails.desc });
+            flag = true;
+        }db.collection('tasks').insertMany(taskArray);;
+    });
+    res.redirect('/listtasks'); // redirect the client to list users page
 });
 
 console.log('Server running at http://127.0.0.1:8080/'); 

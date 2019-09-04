@@ -14,7 +14,7 @@
         <a href="/deleteall">Delete All</a>
         <a href="/insertmany">Insert Many</a>
         </h1>
-        <form action="/newtask" method= 'POST'>
+        <form action="/insertmany" method= 'POST'>
             Task Name<input type = 'text' name="name"/><br/>
             Task Assigned to <input type = 'text' name='person'/><br/>
             Task Due<input type = 'date' name="due"/><br/>
@@ -23,6 +23,7 @@
                 <option value="completed">completed</option>
             </select><br/>
             Task Description<input type = 'text' name="desc"/><br/>
+            Count<input type = 'text' name="count"/><br/>
             <button type = 'submit'>Submit</button>
         </form>
         
