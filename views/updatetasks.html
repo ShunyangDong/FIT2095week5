@@ -1,29 +1,33 @@
 <html>
-        <head>
-                <link rel="stylesheet" href="styles.css">
-        </head>
+
+<head>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
 <body>
-    <h1>Update Task</h1></br>
+    <h1>Update Task</h1>
+    </br>
     <h1>
-        <a href = "/">HOME</a>
-        <a href = "/newtask">ADD NEW TASK</a>
-        <a href = "/listtasks">List Tasks</a>
+        <a href="/">Home</a>
+        <a href="/newtask">Add New Task</a>
+        <a href="/listtasks">List Tasks</a>
         <a href="/updatetasks">Update Tasks</a>
         <a href="/deletetasks">Delete Tasks</a>
         <a href="/deleteall">Delete All</a>
-        <a href="/insertmany">Insert Many</a>
+        <a href='/insertDeveloper'>Insert Developer</a>
+        <a href='listdevelopers'>List Developers</a>
     </h1>
 
     <form action="/updatetasks" method="POST">
         Task id <input type="text" method="POST" name="id" /> </br>
-        <p style="display: inline;">Task New Status</p><select name= "status">
-            <option value="in progress">in progress</option>
-            <option value="completed">completed</option>
+        <p style="display: inline;">Task New Status</p><select name="status">
+            <option value="InProgress">InProgress</option>
+            <option value="Complete">Complete</option>
         </select><br/>
         <input type="submit" value="Submit" /> </br>
     </form>
 
-    
+
 </body>
 
 </html>

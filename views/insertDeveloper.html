@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1>
+        <a href="/">Home</a>
+        <a href="/newtask">Add New Task</a>
+        <a href="/listtasks">List Tasks</a>
+        <a href="/updatetasks">Update Tasks</a>
+        <a href="/deletetasks">Delete Tasks</a>
+        <a href="/deleteall">Delete All</a>
+        <a href='/insertDeveloper'>Insert Developer</a>
+        <a href='listdevelopers'>List Developers</a>
+    </h1>
+    <form action="/insertDeveloper" method='POST'>
+        First Name<input type='text' name="firstName" /><br/> Last Name<input type='text' name='lastName' /><br/>
+        <p style="display: inline;">Level</p><select name="level">
+                <option value="Beginner">Beginner</option>
+                <option value="Expert">Expert</option></select><br/> State
+        <input type='text' name="state" /><br/> Suburb
+        <input type='text' name="suburb" /><br/> Street
+        <input type='text' name="street" /><br/> Unit
+        <input type='text' name="unit" /><br/>
+        <button type='submit'>Submit</button>
+    </form>
+</body>
+
+</html>
